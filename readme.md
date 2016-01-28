@@ -46,8 +46,7 @@ script which can be used anywhere.
 
 ## Links
 
-http://www.systutorials.com/39549/changing-linux-users-password-in-one-command-line/
-
-http://www.cyberciti.biz/faq/changing-password-of-specific-account-in-linux-commandline/
-
-https://www.seancassidy.me/dont-pipe-to-your-shell.html
+* http://www.systutorials.com/39549/changing-linux-users-password-in-one-command-line/
+* http://www.cyberciti.biz/faq/changing-password-of-specific-account-in-linux-commandline/
+* http://unix.stackexchange.com/a/57804/85863
+* https://www.seancassidy.me/dont-pipe-to-your-shell.html
