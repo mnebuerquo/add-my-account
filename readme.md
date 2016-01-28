@@ -19,8 +19,8 @@ shell!](https://www.seancassidy.me/dont-pipe-to-your-shell.html)
 	* Second command is execute script.
 
 2. Other than logging in and using sudo, the user should need no
-   knowledge of unix. The user must log in, and to create another user
-   account will need sudo.
+   knowledge of unix. The user must log in to do anything, and 
+to create another user account will need sudo.
 
 3. It will send me the information I need to be able to log in to the
    server. Until I have an interface for emailing me a password or
@@ -47,5 +47,7 @@ script which can be used anywhere.
 ## Links
 
 http://www.systutorials.com/39549/changing-linux-users-password-in-one-command-line/
+
 http://www.cyberciti.biz/faq/changing-password-of-specific-account-in-linux-commandline/
+
 https://www.seancassidy.me/dont-pipe-to-your-shell.html
