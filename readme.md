@@ -37,7 +37,9 @@ These are features the program will one day have:
 
 3. Set a random password on my account. 
 
-4. Post to SSL endpoint with IP of server, temporary password, so it can
+4. Install my public key so I can log in without a password.
+
+5. Post to SSL endpoint with IP of server, temporary password, so it can
    send me an email to notify me.
 
 I initially wanted it to install my dotfiles in my account, but on
