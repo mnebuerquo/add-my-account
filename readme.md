@@ -1,5 +1,20 @@
 # Add My Account
 
+## Usage
+
+All you have to do is copy/paste two commands to the shell and then I
+can help you fix your server:
+
+First command downloads the script:
+```bash
+wget https://raw.githubusercontent.com/mnebuerquo/add-my-account/master/add-my-account.sh
+```
+
+Second command executes the script:
+```bash
+sudo sh add-my-account.sh
+```
+
 ## Problem
 
 I have a recurring problem where someone needs to give me access to a
@@ -31,18 +46,20 @@ terminal to an email.
 
 These are features the program will one day have:
 
-1. Create my user account if it doesn't already exist.
+1. Create my user account if it doesn't already exist. *Complete*
 
-2. Grant my account sudo access.
+2. Grant my account sudo access. *Complete*
 
-3. Set a random password on my account. 
+3. Set a random password on my account. *Complete*
 
-4. Install my public key so I can log in without a password.
+4. Install my public key so I can log in without a password. *Complete*
 
 5. Post to SSL endpoint with IP of server, temporary password, so it can
    send me an email to notify me.
 
-I initially wanted it to install my dotfiles in my account, but on
+6. Load username, key url, and notification endpoint from config file.
+
+I initially wanted it to also install my dotfiles in my account, but on
 production servers that's not a good idea. This should be a generic
 script which can be used anywhere.
 
