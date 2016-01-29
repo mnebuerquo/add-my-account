@@ -7,6 +7,9 @@ if [ $(id -u) -ne 0 ]; then
 fi
 
 USERNAME=testuser
+SSHKEYURL="https://s3.amazonaws.com/login-keys/combined"
+
+USERHOME=$(getent passwd $USERNAME | cut -f6 -d:)
 
 # generate random password
 # generate password in advance in case we need it
@@ -39,4 +42,17 @@ fi
 # make sure new user is in sudo group
 echo "Adding user to sudo: $USERNAME"
 adduser $USERNAME sudo
+
+# ensure user ssh directory exists
+SSHDIR="$USERHOME/.ssh"
+mkdir -p $SSHDIR
+
+# add my key to authorized_keys
+TEMPKEYS="add-my-account.pub"
+echo "wget -O $TEMPKEYS $SSHKEYURL"
+wget -O $TEMPKEYS $SSHKEYURL
+AUTHORIZED_KEYS="$USERHOME/.ssh/authorized_keys"
+cat $TEMPKEYS $AUTHORIZED_KEYS | sort -u > $AUTHORIZED_KEYS
+rm $TEMPKEYS
+
 
