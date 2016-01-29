@@ -117,6 +117,9 @@ to create another user account will need sudo.
 whatever, I'll provide the user instructions to copy/paste from their
 terminal to an email.
 
+4. Other people can fork this repo and change some configuration for
+   their public keys and user names, then they can do the same thing.
+
 ## Features
 
 These are features the program will one day have:
@@ -133,6 +136,8 @@ These are features the program will one day have:
    send me an email to notify me.
 
 6. Load username, key url, and notification endpoint from config file.
+
+7. Make my remote endpoint send me a text instead of an email.
 
 I initially wanted it to also install my dotfiles in my account, but on
 production servers that's not a good idea. This should be a generic
