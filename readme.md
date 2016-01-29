@@ -28,9 +28,9 @@ give me login and sudo access on their server.
 _This is a transcript of a fictional phone call between CEO Neil and
 Tech Consultant Sherman._
 
-*CEO Neil:* Sherman, our critical web app is down, and no one here knows
-how to fix it. Our main tech guy is out on a camping trip and I can't
-get him on the phone.
+*CEO Neil:* Sherman, someone rebooted the server and now our critical web app 
+is down, and no one here knows how to fix it. Our main tech guy is out on a 
+camping trip and I can't get him on the phone.
 
 *Sherman:* Ok. I can figure it out, but I'll have to be able to get into
 the server and get sudo access.
@@ -74,6 +74,28 @@ are.
 *CEO Neil:* Yes. I see it.
 
 ... It just gets more tedious from here. ...
+
+... Fifteen minutes later ...
+
+*Sherman:* Ok! I'm in! Checking for sudo... Yes. I have sudo. Now I can 
+figure out what went wrong. I'll call you back when I have it up and 
+running.
+
+... Ten minutes later ...
+
+*CEO Neil:* Hello?
+
+*Sherman:* You're back online again. 
+
+*CEO Neil:* Thank you! What was wrong?
+
+*Sherman:* I found some error messages in the
+log, there was a configuration error so it couldn't start back up when
+someone rebooted the server. I fixed the configuration error and
+started it back up, and it should keep going now. It actually took
+longer to get me logged in to the server than to fix the problem.
+
+*CEO Neil:* Thank you so much! You've really saved our butts today.
 
 
 ## Goals
