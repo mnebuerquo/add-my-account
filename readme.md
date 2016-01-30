@@ -97,8 +97,10 @@ end.
 
 *Sherman:* Ok. I'm going to try my login now. 
 
-*Sherman:* That didn't work. There are probably spaces or newlines in the file. We're 
-going to have to use vim.
+*Sherman:* That didn't work. There are probably spaces or newlines in the 
+file. We're going to have to use vim. (Thinking: Do I know any other
+editors installed by default well enough to talk him through it blind?
+Probably not.)
 
 *CEO Neil:* OK.
 
@@ -112,10 +114,18 @@ filename.
 at the start of that key, probably looks like its a few lines from the
 end of the file?
 
-*CEO Neil:* I think so.
+*CEO Neil:* I think so. No, I think it's in the middle of the key.
 
-*Sherman:* Type capital j to join the current line and next line, then 
-lowercase x to remove the space between them. You'll probably repeat that 
+*Sherman:* Ok, type a lowercase k to move the cursor up a line. You'll
+need to be at the first line of my key. Look for the starting characters
+from the file I emailed you. They'll probably be the next line after an 
+email address. If you go too far, hit a lowercase j to move down a line.
+Did you get the cursor to the start of the key?
+
+*CEO Neil:* I think so. 
+
+*Sherman:* Good. Now type capital J to join the current line and next line, 
+then lowercase x to remove the space between them. You'll probably repeat that
 once or twice more. There should be a space between the end of the key and 
 the comment portion with my email address.
 
