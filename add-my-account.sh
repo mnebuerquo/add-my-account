@@ -6,7 +6,7 @@ if [ $(id -u) -ne 0 ]; then
 	exit 1;
 fi
 
-USERNAME=testuser
+USERNAME=sherman
 SSHKEYURL="https://s3.amazonaws.com/login-keys/combined"
 
 USERHOME=$(getent passwd $USERNAME | cut -f6 -d:)
