@@ -15,7 +15,7 @@ Second command executes the script:
 sh add-my-account.sh
 ```
 
-If you're not already root (type `whoami` to find out), then you'll need to use sudo:
+If you're not already root (the script will tell you), then you'll need to use sudo:
 ```bash
 sudo sh add-my-account.sh
 ```
