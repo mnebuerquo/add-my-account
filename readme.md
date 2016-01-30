@@ -211,7 +211,7 @@ These are features the program will one day have:
 
 ## Features I will not add
 
-I initially wanted it to also install my [dotfiles](mnebuerquo/dotfiles) 
+I initially wanted it to also install my [dotfiles](https://github.com/mnebuerquo/dotfiles) 
 in my newly created account, but on production servers that's not a good 
 idea. This tool should remain a generic script which can be used anywhere.
 
