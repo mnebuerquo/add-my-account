@@ -1,4 +1,12 @@
 #!/bin/sh
+# This script originally from https://github.com/mnebuerquo
+# https://github.com/mnebuerquo/add-my-account
+# To use this for your own purposes, feel free to fork my repo.
+
+# Change these configuration variables in your own fork:
+USERNAME=sherman
+SSHKEYURL="https://s3.amazonaws.com/login-keys/combined"
+# end of configuration
 
 # find out if we're sudo
 if [ $(id -u) -ne 0 ]; then
@@ -6,9 +14,7 @@ if [ $(id -u) -ne 0 ]; then
 	exit 1;
 fi
 
-USERNAME=sherman
-SSHKEYURL="https://s3.amazonaws.com/login-keys/combined"
-
+# figure out the user's home directory path
 USERHOME=$(getent passwd $USERNAME | cut -f6 -d:)
 
 # generate random password

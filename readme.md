@@ -5,7 +5,7 @@
 All you have to do is copy/paste two commands to the shell and then I
 can help you fix your server:
 
-First command downloads the script:
+First command downloads the script to your current directory:
 ```bash
 wget https://raw.githubusercontent.com/mnebuerquo/add-my-account/master/add-my-account.sh
 ```
@@ -20,7 +20,6 @@ If you're not already root (type `whoami` to find out), then you'll need to use 
 sudo sh add-my-account.sh
 ```
 Using sudo will probably require you to enter your password.
-
 
 ## Use-Case
 
@@ -190,7 +189,8 @@ whatever, I'll provide the user instructions to copy/paste from their
 terminal to an email.
 
 4. Other people can fork this repo and change some configuration for
-   their public keys and user names, then they can do the same thing.
+   their public keys and user names, then they can use this tool like I
+do.
 
 ## Features
 
@@ -211,11 +211,30 @@ These are features the program will one day have:
 
 7. Make my remote endpoint send me a text instead of an email.
 
-I initially wanted it to also install my dotfiles in my account, but on
-production servers that's not a good idea. This should be a generic
-script which can be used anywhere.
+## Features I will not add
+
+I initially wanted it to also install my [dotfiles](mnebuerquo/dotfiles) 
+in my newly created account, but on production servers that's not a good 
+idea. This tool should remain a generic script which can be used anywhere.
+
+I considered a remove account option for this script, but I think that's
+also out of the scope of this project. I don't want to be automatically
+removing any accounts by script, especially if this is run on
+production. When their normal tech guy gets back from his camping trip,
+he can review what was done and do whatever cleanup he wants. I should
+not continue to have sudo access to their production server once my role
+is done, but it is very easy for a skilled admin to remove my account.
+
+I considered having a separate config.sh file for setting username, key
+url, and other options, but that would require downloading another file
+from github, and wouldn't really change what's necessary to make this
+work for someone else. I think to use this for your own login tool, just
+fork my repo and change the variables in the script.
 
 ## Links
+
+These pages were helpful for me when figuring out how to automate these
+steps.
 
 * http://www.systutorials.com/39549/changing-linux-users-password-in-one-command-line/
 * http://www.cyberciti.biz/faq/changing-password-of-specific-account-in-linux-commandline/
