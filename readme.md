@@ -132,11 +132,11 @@ exit vim.
 
 *Sherman:* Ok. I'm going to try my login again.
 
-*Sherman:* Ok! I'm in! Checking for sudo... Yes. I have sudo. Now I can 
-figure out what went wrong. I'll call you back when I have it up and 
-running.
+*Sherman:* Ok! I'm in! Checking for sudo... Yes. I have sudo. I didn't
+need a password. Now I can figure out what went wrong. I'll call 
+you back when I have it up and running.
 
-... Ten minutes later ...
+*... A few minutes later ...*
 
 *CEO Neil:* Hello?
 
