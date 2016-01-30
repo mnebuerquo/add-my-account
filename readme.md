@@ -61,15 +61,16 @@ you through it one character at a time.
 
 *CEO Neil:* Ok. I'm ready.
 
-*Sherman:* (Not going to add a new account, we're just going to get a key
-installed. I'll fix it later.) 
-First type "cd ~<cr>" Now you're at the home directory of the account.
-Next, type "cd .ssh" Now you're in the .ssh directory where the keys
-are.
+*Sherman:* (Thinking: I'm not going to add a new account, we're just going 
+to get a key installed. I'll fix it later if necessary, once I can do it
+myself.) 
+First type "cd", tilde, then enter. Now you're at the home directory of the 
+account. Next, type "cd", space, ".ssh" then enter. Now you're in the .ssh 
+directory where the keys are.
 
 *CEO Neil:* Ok. I got it.
 
-*Sherman:* Type "ls". You should see a file called authorized_keys.
+*Sherman:* Type "ls" then enter. You should see a file called authorized_keys.
 
 *CEO Neil:* Yes. I see it.
 
