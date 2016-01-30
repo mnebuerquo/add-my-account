@@ -207,9 +207,7 @@ These are features the program will one day have:
 5. Post to SSL endpoint with IP of server, temporary password, so it can
    send me an email to notify me.
 
-6. Load username, key url, and notification endpoint from config file.
-
-7. Make my remote endpoint send me a text instead of an email.
+6. Make my remote endpoint send me a text instead of an email.
 
 ## Features I will not add
 
