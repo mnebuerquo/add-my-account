@@ -25,9 +25,29 @@ Using sudo will probably require you to enter your password.
 
 I have a recurring situation where someone needs to give me access to a
 server so I can help them troubleshoot a problem. Many times it has been
-a person with sudo access but without a great knowledge of Linux. My goal
-is to send them a one-liner which they can paste into their terminal to
-give me login and sudo access on their server.
+a person with sudo access but without a great knowledge of Linux. 
+
+You may ask why someone has sudo access to a production server, but
+doesn't know how to use Linux. This is very common in small companies,
+design firms, and companies for whom the technology is not their
+product, but a necessary cost of doing business. A company which has
+serious security requirements won't ever use this script, but they will
+have multiple people capable of supporting their servers so they won't
+typically be in this situation.
+
+I know I can troubleshoot their situation, but I can't log in, and they 
+don't know how to create an account for me. In the User Story, I show an 
+example of talking someone through adding my public key to an existing 
+account. This is a painful process, so copy/paste makes it easier. 
+
+My goal is to send them a simple command which they can paste into their 
+terminal to give me login and sudo access on their server.
+
+Sure, I could try to use something like remote desktop to log in to
+their laptop and use their login. But I don't have any of that set up in
+advance. That's also slow, and I'm limited by the capabilities of their
+terminal program. This way, I can send them a link to my github repo. It 
+has simple instructions, and should work for most cases.
 
 ## User Story
 
@@ -45,11 +65,10 @@ the server and get sudo access.
 
 *Sherman:* Can someone there log in to the server?
 
-*CEO Neil:* I think so... (shouts across the office and also into the
-phone) ... Who has access to the app server? ... Yes, one of us can log
-in.
+*CEO Neil:* I think so... (shouts across the office) ... Who has access to the
+app server? ... Yes, one of us can log in.
 
-*Sherman:* Ok, can that person run commands with sudo?
+*Sherman:* Ok, can that account run commands with sudo?
 
 *CEO Neil:* I don't know. We'll try it. ... (sets phone down for a minute)
 ... I think we can. Now what?
@@ -224,10 +243,12 @@ not continue to have sudo access to their production server once my role
 is done, but it is very easy for a skilled admin to remove my account.
 
 I considered having a separate config.sh file for setting username, key
-url, and other options, but that would require downloading another file
+url, and other options. That would require downloading another file
 from github, and wouldn't really change what's necessary to make this
-work for someone else. I think to use this for your own login tool, just
-fork my repo and change the variables in the script.
+work for someone else. You'd still have to fork the repo to change the
+configuration file. I think it's best to just have the configuration
+variables in the first few lines of the script, with a comment. Fork
+this repo and use it for your own purposes.
 
 ## Links
 
