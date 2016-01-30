@@ -73,9 +73,63 @@ are.
 
 *CEO Neil:* Yes. I see it.
 
-... It just gets more tedious from here. ...
+*Sherman:* I'm not going to ask you to use vim unless we have to. I'm
+going to dictate a command to you, and you'll need to type it exactly as
+I describe.
 
-... Fifteen minutes later ...
+*CEO Neil:* OK.
+
+*Sherman:* Type echo, space, double quote, then paste the contents of
+that key file into your terminal. Then type another double quote, space, 
+then two greater than signs, space, then authorized_keys. Now hit enter.
+
+*CEO Neil:* OK.
+
+*Sherman:* Did you do that? Any errors?
+
+*CEO Neil:* Did it. No errors.
+
+*Sherman:* Now type tail authorized_keys and tell me what you see.
+
+*CEO Neil:* I see a bunch of random stuff, then an email address at the
+end.
+
+*Sherman:* Ok. I'm going to try my login now. 
+
+*Sherman:* That didn't work. There are probably spaces or newlines in the file. We're 
+going to have to use vim.
+
+*CEO Neil:* OK.
+
+*Sherman:* Type vim authorized_keys, then hit enter. You'll see the
+contents of the file with a bar across the bottom containing the
+filename.
+
+*CEO Neil:* OK.
+
+*Sherman:* Type colon, dollarsign, enter. Now type caret. Is the cursor
+at the start of that key, probably looks like its a few lines from the
+end of the file?
+
+*CEO Neil:* I think so.
+
+*Sherman:* Type capital j to join the current line and next line, then 
+lowercase x to remove the space between them. You'll probably repeat that 
+once or twice more. There should be a space between the end of the key and 
+the comment portion with my email address.
+
+*CEO Neil:* OK.
+
+*Sherman:* Were you able to remove the spaces?
+
+*CEO Neil:* I think so.
+
+*Sherman:* Ok. Good. Now type colon, w, q, enter. That will save and
+exit vim.
+
+*CEO Neil:* OK. That exited.
+
+*Sherman:* Ok. I'm going to try my login again.
 
 *Sherman:* Ok! I'm in! Checking for sudo... Yes. I have sudo. Now I can 
 figure out what went wrong. I'll call you back when I have it up and 
