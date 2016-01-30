@@ -12,8 +12,15 @@ wget https://raw.githubusercontent.com/mnebuerquo/add-my-account/master/add-my-a
 
 Second command executes the script:
 ```bash
+sh add-my-account.sh
+```
+
+If you're not already root (type `whoami` to find out), then you'll need to use sudo:
+```bash
 sudo sh add-my-account.sh
 ```
+Using sudo will probably require you to enter your password.
+
 
 ## Use-Case
 
@@ -167,15 +174,15 @@ longer to get me logged in to the server than to fix the problem.
 
 These are the goals of this project:
 
-1. This needs to be a one-liner which can be pasted into a terminal. It
-   probably needs to be a two-liner. [Don't pipe to your
+1. I would like a one-liner which can be pasted into a terminal. It
+   probably needs to be a two-liner, though. [Don't pipe to your
 shell!](https://www.seancassidy.me/dont-pipe-to-your-shell.html)
 	* First command is wget from raw.github.com
 	* Second command is execute script.
 
-2. Other than logging in and using sudo, the user should need no
-   knowledge of unix. The user must log in to do anything, and 
-to create another user account will need sudo.
+2. The user should need zero knowledge of unix to use this. Of course
+   they will have to be able to log in to an account with root or sudo
+privileges, and for sudo they will usually need to know the password.
 
 3. It will send me the information I need to be able to log in to the
    server. Until I have an interface for emailing me a password or
