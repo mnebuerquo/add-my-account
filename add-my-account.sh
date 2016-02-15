@@ -14,6 +14,16 @@ if [ $(id -u) -ne 0 ]; then
 	exit 1;
 fi
 
+# GH-3 need to know if wget is installed
+if [ which wget ]; then
+	DOWNLOAD="wget -O"
+elif [ which curl ]; then
+	DOWNLOAD="curl -o"
+else
+	echo "Either wget or curl must be installed!";
+	exit 2;
+fi
+
 # figure out the user's home directory path
 USERHOME=$(getent passwd $USERNAME | cut -f6 -d:)
 
@@ -55,8 +65,9 @@ mkdir -p $SSHDIR
 
 # add my key to authorized_keys
 TEMPKEYS="add-my-account.pub"
-echo "wget -O $TEMPKEYS $SSHKEYURL"
-wget -O $TEMPKEYS $SSHKEYURL
+CMD="$DOWNLOAD $TEMPKEYS $SSHKEYURL"
+echo $CMD
+eval $CMD
 AUTHORIZED_KEYS="$USERHOME/.ssh/authorized_keys"
 cat $TEMPKEYS $AUTHORIZED_KEYS | sort -u > $AUTHORIZED_KEYS
 rm $TEMPKEYS
