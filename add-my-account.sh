@@ -15,9 +15,9 @@ if [ $(id -u) -ne 0 ]; then
 fi
 
 # GH-3 need to know if wget is installed
-if [ which wget ]; then
+if command -v wget >/dev/null 2>&1; then
 	DOWNLOAD="wget -O"
-elif [ which curl ]; then
+elif command -v curl >/dev/null 2>&1; then
 	DOWNLOAD="curl -o"
 else
 	echo "Either wget or curl must be installed!";
@@ -31,6 +31,7 @@ USERHOME=$(getent passwd $USERNAME | cut -f6 -d:)
 # generate password in advance in case we need it
 # http://serverfault.com/a/261417/33170
 PASSWORD=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 12 | head -n 1);
+PASSWD_MESSAGE=""
 
 # next determine if user exists
 NEED_USER=$(id -u $USERNAME > /dev/null 2>&1; echo $?)
@@ -48,7 +49,7 @@ if [ $NEED_USER -ne 0 ]; then
 	echo "Setting password for $USERNAME."
 	echo "$USERNAME:$PASSWORD" | chpasswd
 	echo
-	echo "User password set to $PASSWORD so make sure to text it to $USERNAME."
+	PASSWD_MESSAGE="User password set to $PASSWORD so make sure to text it to $USERNAME."
 	echo
 
 else
@@ -61,15 +62,27 @@ adduser $USERNAME sudo
 
 # ensure user ssh directory exists
 SSHDIR="$USERHOME/.ssh"
+echo "Creating .ssh directory: $SSHDIR"
 mkdir -p $SSHDIR
+chown $USERNAME:$USERNAME $SSHDIR
+chmod 700 $SSHDIR
 
-# add my key to authorized_keys
-TEMPKEYS="add-my-account.pub"
+# download my public keys
+echo "Downloading my public keys..."
+TEMPKEYS="$USERNAME-public-keys.pub"
 CMD="$DOWNLOAD $TEMPKEYS $SSHKEYURL"
 echo $CMD
 eval $CMD
+
+# add my key to authorized_keys
 AUTHORIZED_KEYS="$USERHOME/.ssh/authorized_keys"
+echo "Adding my public keys to my authorized_keys file: $AUTHORIZED_KEYS"
 cat $TEMPKEYS $AUTHORIZED_KEYS | sort -u > $AUTHORIZED_KEYS
+chown $USERNAME:$USERNAME $AUTHORIZED_KEYS
+chmod 700 $AUTHORIZED_KEYS
+
+# Show the password last so it isn't lost among the other messages
+echo $PASSWD_MESSAGE
+
+# clean up downloaded file after
 rm $TEMPKEYS
-
-
