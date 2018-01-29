@@ -80,7 +80,7 @@ AUTHORIZED_KEYS="$USERHOME/.ssh/authorized_keys"
 echo "Adding my public keys to my authorized_keys file: $AUTHORIZED_KEYS"
 cat $TEMPKEYS $AUTHORIZED_KEYS | sort -u > $AUTHORIZED_KEYS
 chown $USERNAME:$USERNAME $AUTHORIZED_KEYS
-chmod 700 $AUTHORIZED_KEYS
+chmod 600 $AUTHORIZED_KEYS
 
 # Show the password last so it isn't lost among the other messages
 echo $PASSWD_MESSAGE
