@@ -5,7 +5,8 @@
 
 # Change these configuration variables in your own fork:
 USERNAME=sherman
-SSHKEYURL="https://s3.amazonaws.com/login-keys/combined"
+#SSHKEYURL="https://s3.amazonaws.com/login-keys/combined"
+SSHKEYURL="https://s3.amazonaws.com/login-keys/spatial_laptop"
 # end of configuration
 
 # find out if we're sudo
